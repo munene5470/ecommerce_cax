@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label>Amount to Pay</label>
-                <input type="text" name="amount" class="form-control" placeholder="" value="" required>
+                <input type="text" id="price"  name="amount" class="form-control" placeholder="" value="" disabled required>
             </div>
             <div class="alert alert-info">
                 Mode of Payment: <strong>Cash with order</strong>

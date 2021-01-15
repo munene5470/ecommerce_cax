@@ -17,6 +17,7 @@
                         <?php if(isset($_SESSION['cart'])){ ?>
                             <?php foreach($_SESSION['cart'] as $k=> $row): ?>
                                 <?php if($row['qty'] != 0): ?>
+                                   
                                 <tr>
                                     <td class="text-center"><strong><?php echo $row['product'];?></strong></td>
                                     <td class="text-center"><?php echo $row['price'];?></td>
@@ -53,7 +54,7 @@
                     </table>
                     <div class="pull-right">
                         <a href="cart/data.php?q=emptycart" class="btn btn-danger btn-lg">Empty Cart!!!</a>
-                        <a href="#" class="btn btn-success btn-lg" data-toggle="modal" data-target="#checkout_modal">Check Out</a>
+                        <a id = "check"  href="#" class="btn btn-success btn-lg">Check Out</a>
                     </div>
                     <?php }else{ ?>
                             <tr><td colspan="5" class="text-center alert alert-danger"><strong>*** Your Cart is Empty ***</strong></td></tr>
@@ -66,7 +67,18 @@
 	</section><!--/form-->
 
 
+<script>   
 
+    $(document).ready(function () {
+
+    $("#check").on('click',()=>{
+
+        $('#checkout_modal').modal("show");
+        })
+            $('#price').val("<?php echo $total ?>");
+        });
+
+</script>
 
 <?php include('include/home/modal.php'); ?>
 <?php include('include/home/footer.php'); ?>
